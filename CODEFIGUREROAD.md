@@ -17,6 +17,16 @@ public class Principal{
 }
 // CALSE JUEGO
 import javax.swing.JPanel;
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Ellipse2D;
+import javax.swing.JPanel;
+
 public class Juego extends JPanel{
   public Juego(){
   }
@@ -68,6 +78,39 @@ public static void nextLevel(){
         case 5:
         wingame() ;
         break;
+        
+/Cargamos una imagen y la pintamos en el tablero. 
+package com.zetcode;
+
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
+public class Board extends JPanel {
+
+    private Image ESTABLECER;
+
+    public Board() {
+
+        initBoard();
+    }
+    
+    private void initBoard() {
+        
+        loadImage();
+        
+        int w = bardejov.getWidth(this);
+        int h =  bardejov.getHeight(this);
+        setPreferredSize(new Dimension(w, h));        
+    }
+    
+    private void loadImage() {
+        
+        ImageIcon ii = new ImageIcon("src/resources/ESTABLECER.png");
+        bardejov = ii.getImage();        
+    }
 
       }
    }
