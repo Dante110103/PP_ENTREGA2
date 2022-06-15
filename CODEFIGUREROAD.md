@@ -1,21 +1,31 @@
 # PP_ENTREGA2FIGUREROAD
 CODIGO_JUEGO_FIGURE_ROAD
-public class Principal{
-  public static void main(string[]args){
-    JFrame Ventana=new JFrame("FIGUREROAD");
-    Juego Figureroad=new Juego();
-    ventana.add(Figureroad);
-    ventana.setSize(1300,1400);
-    ventana.setLocation(70,200);
-    ventana.setVisible(true);
-    ventana.setDefaultCloseOperation(Jframe.EXIT_ON_COLSE);
-    
-    while(true){
-    Figureroad.repaint();
-    }
-  }
-}
-// CALSE JUEGO
+package Juego;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+import javax.swing.JFrame;
+public class Main_Class {
+	public static void main(String[]args){
+	    JFrame ventana=new JFrame("FIGURE ROAD");
+	    juego jueguito=new juego();
+	    ventana.add(jueguito);
+	    ventana.setSize(1300,1400);
+	    ventana.setLocation(70,200);
+	    ventana.setVisible(true);
+	    ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    
+	    while(true){
+	    	jueguito.repaint();
+	    	try {
+	    		Thread.sleep(10);	
+	    	} catch (InterruptedException ex) {
+	    		 
+	    	}
+	    	
+	    }
+	  }
+	}
+// CLASE JUEGO
 import javax.swing.JPanel;
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -51,7 +61,7 @@ partida");
   }
 
 /**
- * Este metodo nos ayudav a validar el nivel actual y generar un nuevo nivel*/
+ * Este metodo nos ayuda a validar el nivel actual y generar un nuevo nivel*/
 public static void nextLevel(){
     //evaluamos el nivel utilizando la estatica Figureroad  level
     switch (Figureroad.getFigureroad level()) {
